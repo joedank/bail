@@ -10,11 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme');
     const icon = themeToggle ? themeToggle.querySelector('i') : null;
 
-    if (savedTheme === 'light') {
-        document.body.classList.add('light-mode');
+    // Check for Dark Mode preference (since Light is now default in HTML)
+    if (savedTheme === 'dark') {
+        document.body.classList.remove('light-mode');
         if (icon) {
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
         }
     }
 
